@@ -6,6 +6,7 @@ import re, sys, xml.dom.minidom
 
 MIN_OFFERS = 1000
 CAT_ID, CAT_NAME = "900001", "Трикотаж"
+DIMS = "43/31/10"  # shipping box, cm: length/width/height
 DROP = ("ДатаСоздания", "ДатаИзменения", "Новинка", "Новинка предложение",
         "Остаток", "НомерПредложения", "TSVET", "Картинки")
 GROUPING = {"Цвет": "Цвет", "Размер RU": "Размер"}  # feed name -> KIT name
@@ -83,11 +84,12 @@ def main():
     if kept0:
         text = text.replace("</offers>", "\n".join(kept0) + "\n</offers>", 1)
     text = OFFER.sub(code, text)
+    text = re.sub(r"(?<!</dimensions>)\n</offer>", "\n<dimensions>%s</dimensions>\n</offer>" % DIMS, text)
     text = text.replace("</categories>", '<category id="%s">%s</category>\n</categories>' % (CAT_ID, CAT_NAME), 1)
     text = re.sub(r"<!DOCTYPE[^>]*>", "", text, count=1)
     xml.dom.minidom.parseString(text.encode("utf-8"))
     n = len(OFFER.findall(text))
-    if text.count("<count>") != n or text.count('is_grouping="true"') != 2 * n or text.count("<vendorCode>") != n:
+    if text.count("<count>") != n or text.count('is_grouping="true"') != 2 * n or text.count("<vendorCode>") != n or text.count("<dimensions>") != n:
         sys.exit("ERROR: stock or grouping missing for some offers")
     open(dst, "w", encoding="utf-8").write(text)
     print("OK: %d offers, %d of them sold out (stock 0)" % (n, len(kept0)))
