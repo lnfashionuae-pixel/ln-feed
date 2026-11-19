@@ -43,6 +43,12 @@ def fix(m):
     body = body.replace("</categoryId>", "</categoryId>\n" + add.rstrip("\n"), 1)
     return head + re.sub(r"\n\s*\n", "\n", body).rstrip() + "\n</offer>"
 
+def code(m):  # vendorCode = offer id, so KIT can match prices and stock
+    if "<vendorCode>" in m.group(2):
+        return m.group(0)
+    i = re.search(r'id="(\d+)"', m.group(1)).group(1)
+    return m.group(1) + m.group(2).replace("</vendor>", "</vendor>\n<vendorCode>%s</vendorCode>" % i, 1) + "</offer>"
+
 def main():
     src, dst = sys.argv[1], sys.argv[2]
     prev = sys.argv[sys.argv.index("--prev") + 1:] if "--prev" in sys.argv else []
@@ -76,11 +82,12 @@ def main():
                 kept0.append(re.sub(r"<count>\d+</count>", "<count>0</count>", m.group(0)).replace("<oldprice></oldprice>\n", ""))
     if kept0:
         text = text.replace("</offers>", "\n".join(kept0) + "\n</offers>", 1)
+    text = OFFER.sub(code, text)
     text = text.replace("</categories>", '<category id="%s">%s</category>\n</categories>' % (CAT_ID, CAT_NAME), 1)
     text = re.sub(r"<!DOCTYPE[^>]*>", "", text, count=1)
     xml.dom.minidom.parseString(text.encode("utf-8"))
     n = len(OFFER.findall(text))
-    if text.count("<count>") != n or text.count('is_grouping="true"') != 2 * n:
+    if text.count("<count>") != n or text.count('is_grouping="true"') != 2 * n or text.count("<vendorCode>") != n:
         sys.exit("ERROR: stock or grouping missing for some offers")
     open(dst, "w", encoding="utf-8").write(text)
     print("OK: %d offers, %d of them sold out (stock 0)" % (n, len(kept0)))
