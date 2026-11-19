@@ -8,6 +8,8 @@ MIN_OFFERS = 1000
 CAT_ID, CAT_NAME = "900001", "Трикотаж"
 DIMS = "43/31/10"  # shipping box, cm: length/width/height
 WEIGHT = "0.8"  # kg, one item
+W_JEWEL, JCATS = "0.2", ("154", "155", "160")  # jewelry weight, accessory categories
+JEWEL = re.compile(r"серьг|серёг|чокер|браслет|\bтика\b|цепочк", re.I)
 DROP = ("ДатаСоздания", "ДатаИзменения", "Новинка", "Новинка предложение",
         "Остаток", "НомерПредложения", "TSVET", "Картинки")
 GROUPING = {"Цвет": "Цвет", "Размер RU": "Размер"}  # feed name -> KIT name
@@ -51,6 +53,12 @@ def code(m):  # vendorCode = offer id, so KIT can match prices and stock
     i = re.search(r'id="(\d+)"', m.group(1)).group(1)
     return m.group(1) + m.group(2).replace("</vendor>", "</vendor>\n<vendorCode>%s</vendorCode>" % i, 1) + "</offer>"
 
+def wt(m):  # weight: jewelry is lighter than clothes
+    b = re.sub(r"<weight>.*?</weight>\n", "", m.group(2))
+    n, c = re.search(r"<name>(.*?)</name>", b), re.search(r"<categoryId>(\d+)</categoryId>", b)
+    w = W_JEWEL if n and c and c.group(1) in JCATS and JEWEL.search(n.group(1)) else WEIGHT
+    return m.group(1) + b.replace("<dimensions>", "<weight>%s</weight>\n<dimensions>" % w, 1) + "</offer>"
+
 def main():
     src, dst = sys.argv[1], sys.argv[2]
     prev = sys.argv[sys.argv.index("--prev") + 1:] if "--prev" in sys.argv else []
@@ -86,7 +94,7 @@ def main():
         text = text.replace("</offers>", "\n".join(kept0) + "\n</offers>", 1)
     text = OFFER.sub(code, text)
     text = re.sub(r"(?<!</dimensions>)\n</offer>", "\n<dimensions>%s</dimensions>\n</offer>" % DIMS, text)
-    text = re.sub(r"(?<!</weight>)\n<dimensions>", "\n<weight>%s</weight>\n<dimensions>" % WEIGHT, text)
+    text = OFFER.sub(wt, text)
     text = text.replace("</categories>", '<category id="%s">%s</category>\n</categories>' % (CAT_ID, CAT_NAME), 1)
     text = re.sub(r"<!DOCTYPE[^>]*>", "", text, count=1)
     xml.dom.minidom.parseString(text.encode("utf-8"))
