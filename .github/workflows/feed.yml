@@ -1,0 +1,45 @@
+name: Обновление фида для Яндекс KIT
+
+on:
+  schedule:
+    - cron: "17 * * * *"   # каждый час, в 17 минут
+  workflow_dispatch:        # и вручную, кнопкой Run workflow
+
+permissions:
+  contents: write
+
+concurrency:
+  group: feed
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Скачать фид с сайта (только чтение)
+        run: |
+          curl --fail --silent --show-error --location \
+               --retry 3 --retry-delay 20 --max-time 120 \
+               -A "ln-feed-mirror" \
+               -o source.yml "https://ln-family.com/bitrix/catalog_export/instashop.php"
+
+      - name: Исправить копию
+        run: |
+          mkdir -p public
+          python3 -I transform.py source.yml public/feed.xml
+          python3 -I transform.py source.yml public/test.xml --limit 10
+          date -u +"%Y-%m-%d %H:%M UTC" > public/updated.txt
+          touch public/.nojekyll
+
+      - name: Опубликовать
+        run: |
+          cd public
+          git init -q -b gh-pages
+          git config user.name "feed-bot"
+          git config user.email "feed-bot@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Фид от $(cat updated.txt)"
+          git push -q --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
