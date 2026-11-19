@@ -7,7 +7,7 @@ MIN_OFFERS = 1000
 CAT_ID, CAT_NAME = "900001", "Трикотаж"
 DROP = ("ДатаСоздания", "ДатаИзменения", "Новинка", "Новинка предложение",
         "Остаток", "НомерПредложения", "TSVET", "Картинки")
-GROUPING = ("Цвет", "Размер RU")
+GROUPING = {"Цвет": "Цвет", "Размер RU": "Размер"}  # feed name -> KIT name
 OFFER = re.compile(r"(<offer\b[^>]*>)(.*?)</offer>", re.S)
 
 def par(name):
@@ -28,8 +28,8 @@ def fix(m):
     body = re.sub(r"<picture>.*?</picture>\s*", "", body, flags=re.S)
     for n in DROP:
         body = par(n).sub("", body)
-    for n in GROUPING:
-        body = body.replace('<param name="%s">' % n, '<param name="%s" is_grouping="true">' % n)
+    for old, new in GROUPING.items():
+        body = body.replace('<param name="%s">' % old, '<param name="%s" is_grouping="true">' % new)
     body = re.sub(r"<categoryId>\s*</categoryId>|<categoryId\s*/>", "<categoryId>%s</categoryId>" % CAT_ID, body)
     add = "".join("<picture>%s</picture>\n" % u for u in imgs[:30]) + "<vendor>LN Family</vendor>\n"
     if cnt is not None:
