@@ -26,10 +26,15 @@ jobs:
                -A "ln-feed-mirror" \
                -o source.yml "https://ln-family.com/bitrix/catalog_export/instashop.php"
 
+      - name: Взять прошлую версию (чтобы помнить распроданные товары)
+        run: |
+          git fetch -q --depth=1 origin gh-pages
+          git show FETCH_HEAD:feed.xml > prev.xml
+
       - name: Исправить копию
         run: |
           mkdir -p public
-          python3 -I transform.py source.yml public/feed.xml
+          python3 -I transform.py source.yml public/feed.xml --prev prev.xml seed.txt
           python3 -I transform.py source.yml public/test.xml --limit 10
           date -u +"%Y-%m-%d %H:%M UTC" > public/updated.txt
           touch public/.nojekyll
