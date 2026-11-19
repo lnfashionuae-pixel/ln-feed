@@ -1,0 +1,17 @@
+15766|15765|aksessuary/choker-taliya-one-size-zolotoy/|2000||154|Чокер со стразами|Золотой|ONE SIZE
+20943|20942|aksessuary/perchatki-cetka-one-size-chernyy/|2500||154|Вечерние перчатки из сетки|Черный|ONE SIZE
+21293|21285|platya/plate-kazino-ss24-m-44-molochnyy/|11200|22400|183|Платье макси с вырезом сердце|Молочный|M-44
+21851|21844|platya/plate-lunnyy-kamen-ss24-l-46-chernyy/|6600|16700|183|Платье из воздушной сетки|Черный|L-46
+22901|22888|platya/plate-yuliya-fw24-xs-40-fuksiya-temnyy/|5000|16900|183|Фактурное платье для вечеринки|Фуксия темный|XS-40
+24280|24249|platya/plate-sharlotta-fw24-m-44-chernyy/|6200|15500|183|Платье мини с прилегающим лифом и объемной юбкой|Черный|M-44
+24457|24450|yubki/yubka-perchik-s-42-chernyy/|1900|9900|186|Юбка мини|Черный|S-42
+25270|25263|platya/plate-freya-m-44-goluboy/|4900|9900|183|Платье макси с драпировкой и встроенным боди|Голубой|M-44
+25686|25630|platya/plate-zheneva-m-44-goluboy/|5500|13900|183|Мини-платье с объемным воланом на плечах|Голубой|M-44
+25911|25771|nizhnee_bele/komplekt-cosi-fan-tutte-xs-chernyy/|26500||220|Корсет+трусы Cosi fan tutte|Черный|XS
+26418|25771|nizhnee_bele/komplekt-cosi-fan-tutte-s-belyy/|26500||220|Корсет+трусы Cosi fan tutte|Белый|S
+26681|26670|yubki/yubka-klensi-l-46-molochnyy/|5700|9500|186|Юбка миди с элегантным силуэтом|Молочный|L-46
+28119|28123|platya/plate-ariel-ny6-m-44-chernyy-/|10600|17800|183|Облегающее платье с тонкими бретелями|Черный|M-44
+28155|28142|bryuki/bryuki-elis-l-46-shokoladnyy-/|15700||169|Брюки-бананы классические|Шоколадный|L-46
+28219|28211|zhakety/zhaket-viktoriya-l-46-chernyy/|18500||179|Приталенный жакет с контрастными лацканами и акцентной талией|Черный|L-46
+28274|28252|bryuki/bryuki-agent-007-ss6-xs-40-goluboy/|11200||169|Брюки клеш с высокой посадкой и стрелками|Голубой|XS-40
+29195|28465|platya/plate-byanka-1-l-46-rozy-goluboy/|24500||183|Платье мини с архитектурным кроем|Розы/голубой|L-46
