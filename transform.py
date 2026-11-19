@@ -9,7 +9,7 @@ CAT_ID, CAT_NAME = "900001", "Трикотаж"
 DIMS = "43/31/10"  # shipping box, cm: length/width/height
 WEIGHT = "0.8"  # kg, one item
 W_JEWEL, JCATS = "0.2", ("154", "155", "160")  # light items weight, accessory categories
-JEWEL = re.compile(r"серьг|серёг|чокер|браслет|\bтика\b|цепочк|перчатк|колготк|резинк", re.I)
+JEWEL = re.compile(r"серьг|серёг|чокер|браслет|\bтика\b|цепочк|перчатк|колготк|резинк|леггинс", re.I)
 DROP = ("ДатаСоздания", "ДатаИзменения", "Новинка", "Новинка предложение",
         "Остаток", "НомерПредложения", "TSVET", "Картинки")
 GROUPING = {"Цвет": "Цвет", "Размер RU": "Размер"}  # feed name -> KIT name
