@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # Makes a Yandex KIT friendly copy of the shop feed. Read-only for the site.
-# Usage: transform.py source.yml result.xml [--limit N]
+# Usage: transform.py source.yml result.xml [--limit N] [--prev old.xml ...]
+# Offers that vanished from the source (sold out) are kept from --prev files with stock 0.
 import re, sys, xml.dom.minidom
 
 MIN_OFFERS = 1000
@@ -8,6 +9,11 @@ CAT_ID, CAT_NAME = "900001", "Трикотаж"
 DROP = ("ДатаСоздания", "ДатаИзменения", "Новинка", "Новинка предложение",
         "Остаток", "НомерПредложения", "TSVET", "Картинки")
 GROUPING = {"Цвет": "Цвет", "Размер RU": "Размер"}  # feed name -> KIT name
+# seed line: id|group_id|url path|price|oldprice|categoryId|name|color|size
+SEED = ('<offer id="%s" group_id="%s" available="true">\n<url>https://ln-family.com/shop/%s</url>\n'
+        '<price>%s</price>\n<oldprice>%s</oldprice>\n<currencyId>RUB</currencyId>\n<categoryId>%s</categoryId>\n'
+        '<vendor>LN Family</vendor>\n<count>0</count>\n<name>%s</name>\n'
+        '<param name="Цвет" is_grouping="true">%s</param>\n<param name="Размер" is_grouping="true">%s</param>\n</offer>\n')
 OFFER = re.compile(r"(<offer\b[^>]*>)(.*?)</offer>", re.S)
 
 def par(name):
@@ -39,6 +45,7 @@ def fix(m):
 
 def main():
     src, dst = sys.argv[1], sys.argv[2]
+    prev = sys.argv[sys.argv.index("--prev") + 1:] if "--prev" in sys.argv else []
     limit = int(sys.argv[sys.argv.index("--limit") + 1]) if "--limit" in sys.argv else None
     text = open(src, encoding="utf-8").read()
     n_in = len(OFFER.findall(text))
@@ -57,6 +64,18 @@ def main():
         a, b = text.index("<offers>") + 8, text.index("</offers>")
         text = text[:a] + "\n" + "\n".join(kept) + "\n" + text[b:]
     text = OFFER.sub(fix, text)
+    ids, kept0 = set(re.findall(r'<offer id="(\d+)"', text)), []
+    for name in prev:
+        old = open(name, encoding="utf-8").read()
+        if name.endswith(".txt"):
+            old = "".join(SEED % tuple(x.split("|")) for x in old.splitlines() if x.count("|") == 8)
+        for m in OFFER.finditer(old):
+            i = re.search(r'id="(\d+)"', m.group(1))
+            if i and i.group(1) not in ids:
+                ids.add(i.group(1))
+                kept0.append(re.sub(r"<count>\d+</count>", "<count>0</count>", m.group(0)).replace("<oldprice></oldprice>\n", ""))
+    if kept0:
+        text = text.replace("</offers>", "\n".join(kept0) + "\n</offers>", 1)
     text = text.replace("</categories>", '<category id="%s">%s</category>\n</categories>' % (CAT_ID, CAT_NAME), 1)
     text = re.sub(r"<!DOCTYPE[^>]*>", "", text, count=1)
     xml.dom.minidom.parseString(text.encode("utf-8"))
@@ -64,7 +83,7 @@ def main():
     if text.count("<count>") != n or text.count('is_grouping="true"') != 2 * n:
         sys.exit("ERROR: stock or grouping missing for some offers")
     open(dst, "w", encoding="utf-8").write(text)
-    print("OK: %d offers" % n)
+    print("OK: %d offers, %d of them sold out (stock 0)" % (n, len(kept0)))
 
 if __name__ == "__main__":
     main()
