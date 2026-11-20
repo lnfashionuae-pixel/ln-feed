@@ -36,6 +36,7 @@ jobs:
           mkdir -p public
           python3 -I transform.py source.yml public/feed.xml --prev prev.xml seed.txt
           python3 -I transform.py source.yml public/test.xml --limit 10
+          python3 -I vk.py public/feed.xml public/feed-vk.xml
           date -u +"%Y-%m-%d %H:%M UTC" > public/updated.txt
           touch public/.nojekyll
 
