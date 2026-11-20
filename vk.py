@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Makes a VK (ВКонтакте Маркет) copy of feed.xml. Read-only for the site.
-# - product links get UTM tags;
+# - product links get UTM tags; the description starts with a «buy on the site» link;
 # - sold-out offers (count 0) are marked available="false";
 # - VK allows max 50 values per property: rare colours are folded into a base colour
 #   (only when that does not merge two variants of the same model).
@@ -92,6 +92,13 @@ def main():
     def fix(m):
         head, body = m.group(1), m.group(2)
         body = re.sub(r"<url>(.*?)</url>", url, body, count=1, flags=re.S)
+        u = re.search(r"<url>(.*?)</url>", body, re.S)
+        if u:
+            line = "Купить на сайте с примеркой: %s" % u.group(1).strip()
+            if "<description>" in body:
+                body = body.replace("<description>", "<description>" + line + "\n\n", 1)
+            else:
+                body = body.replace("</name>", "</name>\n<description>%s</description>" % line, 1)
         body = COLOR.sub(lambda c: c.group(1) + mapping.get(cap(c.group(2).strip()), c.group(2)) + c.group(3), body)
         if re.search(r"<count>0</count>", body):
             head = re.sub(r'available="[^"]*"', 'available="false"', head)
@@ -99,7 +106,7 @@ def main():
 
     text = OFFER.sub(fix, text)
     xml.dom.minidom.parseString(text.encode("utf-8"))
-    if text.count("utm_source=vk") != n:
+    if len(re.findall(r"<url>[^<]*utm_source=vk", text)) != n:
         sys.exit("ERROR: UTM missing for some offers")
     open(dst, "w", encoding="utf-8").write(text)
     print("OK VK: %d offers, %d not available, %d colours" % (n, text.count('available="false"'), len(set(mapping.values()))))
