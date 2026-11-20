@@ -94,7 +94,7 @@ def main():
         body = re.sub(r"<url>(.*?)</url>", url, body, count=1, flags=re.S)
         u = re.search(r"<url>(.*?)</url>", body, re.S)
         if u:
-            line = "Купить на сайте с примеркой: %s" % u.group(1).strip()
+            line = "Купить на сайте: %s" % u.group(1).strip()
             if "<description>" in body:
                 body = body.replace("<description>", "<description>" + line + "\n\n", 1)
             else:
