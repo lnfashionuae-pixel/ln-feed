@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2026-11-28 02:00">
+<shop>
+<name>Ln-family</name>
+<company>Ln Family</company>
+<url>https://ln-family.com</url>
+<platform>1C-Bitrix</platform>
+<currencies>
+<currency id="RUB" rate="1" />
+</currencies>
+<categories>
+<category id="180">Платья</category>
+<category id="181" parentId="180">Кимоно</category>
+<category id="182" parentId="180">Комбинации</category>
+<category id="183" parentId="180">Платья</category>
+<category id="184" parentId="180">Сарафаны</category>
+<category id="186">Юбки</category>
+<category id="179">Жакеты</category>
+<category id="173">Верхняя одежда</category>
+<category id="286" parentId="173">Жилеты</category>
+<category id="176" parentId="173">Пальто</category>
+<category id="287" parentId="173">Куртки</category>
+<category id="288" parentId="173">Парки</category>
+<category id="289" parentId="173">Тренчи</category>
+<category id="290" parentId="173">Шубы</category>
+<category id="168">Брюки и джинсы</category>
+<category id="169" parentId="168">Брюки</category>
+<category id="170" parentId="168">Джинсы</category>
+<category id="171" parentId="168">Комбинезоны</category>
+<category id="172" parentId="168">Шорты</category>
+<category id="154">Аксессуары</category>
+<category id="155" parentId="154">Браслеты</category>
+<category id="156" parentId="154">Головные уборы</category>
+<category id="157" parentId="154">Колготки</category>
+<category id="158" parentId="154">Купальники</category>
+<category id="159" parentId="154">Пояса и ремни</category>
+<category id="160" parentId="154">Серьги</category>
+<category id="161" parentId="154">Сумки и рюкзаки</category>
+<category id="276" parentId="154">Шарфы и палантины</category>
+<category id="162">Блузы и топы</category>
+<category id="163" parentId="162">Блузы</category>
+<category id="164" parentId="162">Водолазки</category>
+<category id="165" parentId="162">Кардиганы</category>
+<category id="166" parentId="162">Рубашки</category>
+<category id="167" parentId="162">Топы</category>
+<category id="224" parentId="162">Футболки</category>
+<category id="220">Нижнее белье</category>
+<category id="225">Обувь</category>
+<category id="279">Подарочные карты</category>
+<category id="900001">Трикотаж</category>
+</categories>
+<offers>
+<offer id="12381" group_id="12081"   available="true">
+<url>https://ln-family.com/shop/aksessuary/choker-odnoyarusnyy-one-size-serebryanyy/</url>
+<price>2300</price>
+<currencyId>RUB</currencyId>
+<categoryId>154</categoryId>
+<picture>https://ln-family.com/upload/iblock/109/xgnrz6ds0o6e2ul6ita69ocuhm3oumvq/detail.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/689/c9q23qupp7bbl2daa9pe7f0ua32i6qfk/edd956e8724079bf9cafec15a451a17e.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/bf3/ilpc8260fyy700c4q4z1afefnuqr2muf/more_photo_0.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/c05/t0j1i1tsfag8em2x28m70r863k5bw6is/more_photo_1.jpg</picture>
+<vendor>LN Family</vendor>
+<vendorCode>12381</vendorCode>
+<count>49</count>
+<name>Чокер со стразами</name>
+<description>Лаконичный чокер с сияющими стразами мягко подчёркивает линию шеи и добавляет образу выразительный акцент. Минималистичный дизайн легко сочетается как с вечерними нарядами, так и с более сдержанными образами. Состав: Металл/стразы</description>
+<param name="Цвет" is_grouping="true">Серебряный</param>
+<param name="Размер" is_grouping="true">ONE SIZE</param>
+<weight>0.2</weight>
+<dimensions>43/31/10</dimensions>
+</offer>
+<offer id="12579" group_id="12092"   available="true">
+<url>https://ln-family.com/shop/aksessuary/remen-tekstil-xs-40-bezhevyy/</url>
+<price>500</price>
+<oldprice>2000</oldprice>
+<currencyId>RUB</currencyId>
+<categoryId>154</categoryId>
+<picture>https://ln-family.com/upload/iblock/db7/p6nobr73fgvi637yj19h0nv5nsf23ywp/preview.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/2ce/mkrac49k13ygmfzw1ffenx23io18zekt/more_photo_0.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/b54/0kw0kva4hedw75hj3is5ukzu619vcejb/more_photo_1.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/598/zlafjvdfdslf1arlkd3117h8r3tvztkq/more_photo_3.jpg</picture>
+<vendor>LN Family</vendor>
+<vendorCode>12579</vendorCode>
+<count>6</count>
+<name>Широкий ремень</name>
+<description>Широкий ремень с пряжкой из мягкого текстиля. Состав: 60% полиестер, 35% вискоза, 5% эластан. </description>
+<param name="Цвет" is_grouping="true">Бежевый</param>
+<param name="Размер" is_grouping="true">XS-40</param>
+<weight>0.8</weight>
+<dimensions>43/31/10</dimensions>
+</offer>
+<offer id="12580" group_id="12092"   available="true">
+<url>https://ln-family.com/shop/aksessuary/remen-tekstil-xs-40-pudra/</url>
+<price>500</price>
+<oldprice>2000</oldprice>
+<currencyId>RUB</currencyId>
+<categoryId>154</categoryId>
+<picture>https://ln-family.com/upload/iblock/fb5/eygzsdkr6aw3lf34lmf8ho197qvsa1hk/preview.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/35a/a63sw27l1jld3wuwhru9uimgrjhhcg9j/more_photo_0.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/7e2/knfi501ue7plvv3ywegjxigezphl9tv2/more_photo_1.jpg</picture>
+<vendor>LN Family</vendor>
+<vendorCode>12580</vendorCode>
+<count>9</count>
+<name>Широкий ремень</name>
+<description>Широкий ремень с пряжкой из мягкого текстиля. Состав: 60% полиестер, 35% вискоза, 5% эластан. </description>
+<param name="Цвет" is_grouping="true">Пудра</param>
+<param name="Размер" is_grouping="true">XS-40</param>
+<weight>0.8</weight>
+<dimensions>43/31/10</dimensions>
+</offer>
+<offer id="12581" group_id="12092"   available="true">
+<url>https://ln-family.com/shop/aksessuary/remen-tekstil-s-42-pudra/</url>
+<price>500</price>
+<oldprice>2000</oldprice>
+<currencyId>RUB</currencyId>
+<categoryId>154</categoryId>
+<picture>https://ln-family.com/upload/iblock/fb5/eygzsdkr6aw3lf34lmf8ho197qvsa1hk/preview.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/35a/a63sw27l1jld3wuwhru9uimgrjhhcg9j/more_photo_0.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/7e2/knfi501ue7plvv3ywegjxigezphl9tv2/more_photo_1.jpg</picture>
+<vendor>LN Family</vendor>
+<vendorCode>12581</vendorCode>
+<count>1</count>
+<name>Широкий ремень</name>
+<description>Широкий ремень с пряжкой из мягкого текстиля. Состав: 60% полиестер, 35% вискоза, 5% эластан. </description>
+<param name="Цвет" is_grouping="true">Пудра</param>
+<param name="Размер" is_grouping="true">S-42</param>
+<weight>0.8</weight>
+<dimensions>43/31/10</dimensions>
+</offer>
+<offer id="12642" group_id="12095"   available="true">
+<url>https://ln-family.com/shop/platya/plate-metallik-xs-s-40-42-serebryanyy/</url>
+<price>29000</price>
+<currencyId>RUB</currencyId>
+<categoryId>183</categoryId>
+<picture>https://ln-family.com/upload/iblock/1b8/pj1nvqf2zelb120gweimbdt0e7qzjxqv/preview.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/f2e/d7tc212zjaukjodl43gttxpnerycmi3r/picture.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/74e/jbzxqerp39vraikqwtgap9tv76r36obx/more_photo_2.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/038/yekbs0cq517wkmc9rllj18nbfhdkk3bz/604A2232.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/65c/ng60pmos5k0aqzlp52j5ihmbss664uq0/more_photo_0.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/0cd/dbnb78m3jl76eb5goxxi1irzsvd1kr3e/picture.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/6c8/6l3xblr1hx44mr2tiz60eqg2pv5t7ydp/more_photo_3.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/e25/8bf7longhu6r4x9oo5v7s2qaen8x2byv/more_photo_5.jpg</picture>
+<vendor>LN Family</vendor>
+<vendorCode>12642</vendorCode>
+<count>1</count>
+<name>Мини-платье с кристаллами на тонких бретелях</name>
+<description>Платье мини со стразами на бретелях. У платья есть подклад - мини юбка телесного оттенка. Длина платья 53 см. 
+Платья изготовленное из металла требует бережного отношения, не для повседневной носки. Вещь декоративная.
+Изделие отшивается под заказ, после внесения 100% оплаты. Срок изготовления 2-3 дня. Обращаем ваше внимание: данное изделие не подлежит возврату и обмену</description>
+<param name="Цвет" is_grouping="true">Серебряный</param>
+<param name="Размер" is_grouping="true">XS/S-40/42</param>
+<weight>0.8</weight>
+<dimensions>43/31/10</dimensions>
+</offer>
+<offer id="12796" group_id="12109"   available="true">
+<url>https://ln-family.com/shop/sergi/choker-mnogoyarusnyy-slitnyy-one-size-serebryanyy/</url>
+<price>4200</price>
+<currencyId>RUB</currencyId>
+<categoryId>154</categoryId>
+<picture>https://ln-family.com/upload/iblock/a3b/rcdgfeu47x4jrtzffl8ehk5ignipnuzy/preview.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/4ef/t4rkv3rxudvs5q77bh4v2nmkv32r18kv/IMG_0764.webp</picture>
+<picture>https://ln-family.com/upload/iblock/6e7/plxo0jf6sbz3c5bnx99k46f6rkk5ef2e/Siyayushchiy-profil-s-khrustalnymi-ukrasheniyami-_1_.webp</picture>
+<picture>https://ln-family.com/upload/iblock/8df/w6zfozi6wkkeuluowb9i3gt5qzl137kg/IMG06688.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/b38/9wr471yv4w04whxbixzgmyhbzhm3vpbr/0728.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/a7b/wrk0nruuexckuwh7oa94i4bpi71r7lxs/0780.jpg</picture>
+<vendor>LN Family</vendor>
+<vendorCode>12796</vendorCode>
+<count>31</count>
+<name>Чокер широкий со стразами</name>
+<description>Металлическое колье с украшениями из страз. Цепочка регулируемой длины.
+Длина: 30 см.</description>
+<param name="Цвет" is_grouping="true">Серебряный</param>
+<param name="Размер" is_grouping="true">ONE SIZE</param>
+<weight>0.2</weight>
+<dimensions>43/31/10</dimensions>
+</offer>
+<offer id="13764" group_id="12191"   available="true">
+<url>https://ln-family.com/shop/aksessuary/remen-mikonos-lyen-xs-40-goluboy/</url>
+<price>500</price>
+<oldprice>2000</oldprice>
+<currencyId>RUB</currencyId>
+<categoryId>154</categoryId>
+<picture>https://ln-family.com/upload/iblock/6fb/392jsfjq5fx0utwqjy0767tt9ohy99cb/preview.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/0c1/0xe0pej2j2kgkjz8gk1ryk214zyi8jcx/more_photo_0.jpg</picture>
+<vendor>LN Family</vendor>
+<vendorCode>13764</vendorCode>
+<count>1</count>
+<name>Широкий ремень изо льна</name>
+<description>Широкий ремень изо льна</description>
+<param name="Цвет" is_grouping="true">Голубой</param>
+<param name="Размер" is_grouping="true">XS-40</param>
+<weight>0.8</weight>
+<dimensions>43/31/10</dimensions>
+</offer>
+<offer id="14338" group_id="14013"   available="true">
+<url>https://ln-family.com/shop/aksessuary/choker-krupnye-strazy-one-size-serebryanyy/</url>
+<price>2300</price>
+<currencyId>RUB</currencyId>
+<categoryId>154</categoryId>
+<picture>https://ln-family.com/upload/iblock/af7/1rar2858x1iit13ecs3bq76o51d6oaq6/LN_25.03_6658.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/159/8rvu6ea0oipvsbm43arpsp22qefqb00r/more_photo_0.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/44b/gzlkbuvicx4wb3rv0lbh4c3thghuwger/LN_25.03_6658.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/21c/rjv7oan27lfj7wvrm9xrnue621zzuoll/LN_25.03_6653.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/8df/w6zfozi6wkkeuluowb9i3gt5qzl137kg/IMG06688.jpg</picture>
+<vendor>LN Family</vendor>
+<vendorCode>14338</vendorCode>
+<count>44</count>
+<name>Чокер с круглыми кристаллами</name>
+<description>Чокер со стразами круглой формы. Основа чокера не гнется и идеально держит форму. Состав: металл/стразы.</description>
+<param name="Цвет" is_grouping="true">Серебряный</param>
+<param name="Размер" is_grouping="true">ONE SIZE</param>
+<weight>0.2</weight>
+<dimensions>43/31/10</dimensions>
+</offer>
+<offer id="21840" group_id="14013"   available="true">
+<url>https://ln-family.com/shop/aksessuary/choker-krupnye-strazy-one-size-zolotoy/</url>
+<price>2300</price>
+<currencyId>RUB</currencyId>
+<categoryId>154</categoryId>
+<picture>https://ln-family.com/upload/iblock/59f/bacya9txm1yt4od300qz6p2iifz7o4ld/IMG16942.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/360/d4g5xmt2qz0fyh4c6vk8chzlr0652ej3/IMG16942.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/b0e/43cexz7j8k8mji9eu24ox3037s2q41x1/IMG21268.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/b77/xvqgfcxlzzvo0ellit2sj7c4x5fsncip/IMG16944.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/2a3/c83yj0j4mtj4pcrf9d65oy9wr1e2sg8z/IMG16946.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/daa/u2ewetznnaaztx9dhvb7c759nurdoche/IMG16920.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/7a2/ze0uuewnl6jvc0v040d2ffj29kinl28b/IMG16931.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/3f6/zxr44jfv32m9okuhxxcbtr3sptzgjiek/IMG21275.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/8df/w6zfozi6wkkeuluowb9i3gt5qzl137kg/IMG06688.jpg</picture>
+<vendor>LN Family</vendor>
+<vendorCode>21840</vendorCode>
+<count>15</count>
+<name>Чокер с круглыми кристаллами</name>
+<description>Чокер со стразами круглой формы. Основа чокера не гнется и идеально держит форму. Состав: металл/стразы.</description>
+<param name="Цвет" is_grouping="true">Золотой</param>
+<param name="Размер" is_grouping="true">ONE SIZE</param>
+<weight>0.2</weight>
+<dimensions>43/31/10</dimensions>
+</offer>
+<offer id="24797" group_id="14913"   available="true">
+<url>https://ln-family.com/shop/aksessuary/perchatki-perya-one-size-molochnyy/</url>
+<price>9500</price>
+<currencyId>RUB</currencyId>
+<categoryId>154</categoryId>
+<picture>https://ln-family.com/upload/iblock/92b/5rvkx6c7z5diclo53sy2frd8bphdh0wl/00a61c47944661a67a0ce1744ad698d3.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/7e2/ki3cnctpah4lc6eaolfg03119hs21pjy/00a61c47944661a67a0ce1744ad698d3.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/b39/ocmxht3326d7rsk311pqqjvl2q7ih55k/0022.jpg</picture>
+<picture>https://ln-family.com/upload/iblock/23e/i8lpzwwwegruq49hf3sd1i4i1acj7pg8/0024.jpg</picture>
+<vendor>LN Family</vendor>
+<vendorCode>24797</vendorCode>
+<count>1</count>
+<name>Перчатки с перьями</name>
+<description>Высокие перчатки, украшенные перьями страуса. Изделие изготовлено с использованием натуральных перьев страуса; возможен естественный диапазон оттенков перьев.Состав: 97% полиэстер, 3% лайкра</description>
+<param name="Цвет" is_grouping="true">Молочный</param>
+<param name="Размер" is_grouping="true">ONE SIZE</param>
+<weight>0.2</weight>
+<dimensions>43/31/10</dimensions>
+</offer>
+</offers>
+</shop>
+</yml_catalog>
